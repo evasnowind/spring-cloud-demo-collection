@@ -52,6 +52,19 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- 引入自定义的API，分布式开发中保证定义的一致。此处引入暂时有点问题，先注释 -->
+<!--		<dependency>
+			<groupId>com.prayerlaputa</groupId>
+			<artifactId>common-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>-->
 	</dependencies>
 
 	<!-- start.spring.io自动生成的pom文件中，缺少下面这个配置，将导致部分包找不到，坑啊。。。 -->

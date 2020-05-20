@@ -1,5 +1,6 @@
 package com.prayerlaputa.resttemplate.config;
 
+import com.prayerlaputa.resttemplate.intercept.MyRequestInterceptor;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.config.Registry;
@@ -25,7 +26,9 @@ public class RestTemplateConfig {
     @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {
-        return new RestTemplate(httpRequestFactory());
+        RestTemplate restTemplate = new RestTemplate(httpRequestFactory());
+        restTemplate.getInterceptors().add(new MyRequestInterceptor());
+        return restTemplate;
     }
 
     public ClientHttpRequestFactory httpRequestFactory() {

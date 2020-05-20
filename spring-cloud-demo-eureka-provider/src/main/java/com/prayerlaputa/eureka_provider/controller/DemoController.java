@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RequestMapping("/rest")
 @RestController
@@ -51,4 +54,21 @@ public class DemoController {
     public String getPostHi() {
         return applicationName + " " + serverPort + " say:hi post request!";
     }
+
+    @GetMapping("/getMap")
+    public Map<String, String> getMap() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("name", "prayer");
+        return map;
+    }
+
+    @GetMapping("/getObj")
+    public Person getObj() {
+        Person person = new Person();
+        person.setId(100);
+        person.setName("xiaoming");
+        return person;
+    }
+
+
 }
