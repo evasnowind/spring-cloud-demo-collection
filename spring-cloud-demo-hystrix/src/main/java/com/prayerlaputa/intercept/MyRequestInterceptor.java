@@ -8,7 +8,7 @@ import org.springframework.http.client.ClientHttpResponse;
 import java.io.IOException;
 
 /**
- * @author chenglong.yu@brgroup.com
+ * @author chenglong.yu
  * created on 2020/6/24
  */
 public class MyRequestInterceptor implements ClientHttpRequestInterceptor {
