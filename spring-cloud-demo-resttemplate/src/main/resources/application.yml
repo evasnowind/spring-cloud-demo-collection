@@ -1,0 +1,9 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://prayer:123456@prayer1.com:8761/eureka/
+server:
+  port: 8762
+spring:
+  application:
+    name: resttemplate-consumer
