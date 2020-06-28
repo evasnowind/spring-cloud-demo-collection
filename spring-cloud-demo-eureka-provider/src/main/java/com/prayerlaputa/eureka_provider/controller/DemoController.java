@@ -71,4 +71,8 @@ public class DemoController {
     }
 
 
+    @GetMapping("/say/hi")
+    public String sayHiByParam(String content) {
+        return applicationName + "(port=" + serverPort + ") echo:hi to response '" + content + "'";
+    }
 }
