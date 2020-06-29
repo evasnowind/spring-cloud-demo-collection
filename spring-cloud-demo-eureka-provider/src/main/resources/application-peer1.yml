@@ -1,6 +1,10 @@
 spring:
   application:
     name: service-provider
+  security:
+    user:
+      name: provider-auth
+      password: 12345
 
 eureka:
   client:
@@ -19,4 +23,4 @@ eureka:
 
 
 server:
-  port: 8763
+  port: 18763

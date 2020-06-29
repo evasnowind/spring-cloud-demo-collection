@@ -19,6 +19,7 @@ public class MyController {
 
     @GetMapping("/greeting")
     public String sayHiByFeign(String content) {
-        return serviceMy.sayHi(content);
+        String res = serviceMy.sayHi(content);
+        return res;
     }
 }
