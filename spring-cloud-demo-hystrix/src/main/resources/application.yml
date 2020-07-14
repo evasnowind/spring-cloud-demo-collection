@@ -1,0 +1,11 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://prayer:123456@prayer1.com:8761/eureka/
+server:
+  port: 8762
+spring:
+  application:
+    name: hystrix-consumer
+  main:
+    allow-bean-definition-overriding: true    #当遇到同样名字的时候，是否允许覆盖注册不配置会报错

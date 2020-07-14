@@ -1,6 +1,7 @@
 package com.prayerlaputa.eureka_provider.controller;
 
 import com.prayerlaputa.eureka_provider.service.HealthStatusService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
@@ -20,6 +21,7 @@ import java.util.Map;
 
 @RequestMapping("/rest")
 @RestController
+@Slf4j
 public class DemoController {
 
     @Autowired
@@ -73,6 +75,7 @@ public class DemoController {
 
     @GetMapping("/say/hi")
     public String sayHiByParam(String content) {
+        log.info("sayHiByParam content={}.", content);
         return applicationName + "(port=" + serverPort + ") echo:hi to response '" + content + "'";
     }
 }
