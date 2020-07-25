@@ -21,14 +21,14 @@ public class TestController {
 
     @GetMapping("/hi")
     public String getHi() {
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://provider/rest/hi", String.class);
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://service-provider/rest/hi", String.class);
         return "return :" + responseEntity;
     }
 
 
     @GetMapping("/getMap")
     public String getMap() {
-        String url = "http://provider/rest/getMap";
+        String url = "http://service-provider/rest/getMap";
         ResponseEntity<Map> responseEntity = restTemplate.getForEntity(url, Map.class);
         return "response=" + responseEntity;
     }
@@ -36,7 +36,7 @@ public class TestController {
 
     @GetMapping("/getObj")
     public String getObj() {
-        String url = "http://provider/rest/getMap";
+        String url = "http://service-provider/rest/getMap";
         ResponseEntity<Person> responseEntity = restTemplate.getForEntity(url, Person.class);
         return "response=" + responseEntity;
     }
