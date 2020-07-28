@@ -1,0 +1,53 @@
+server:
+  port: 19000
+
+spring:
+  application:
+    name: zuul-server
+
+
+# eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://prayer:123456@prayer1.com:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    hostname: localhost
+    instance-id: zuul-demo
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+    routes:
+      enabled: true
+
+#logging:
+#  level:
+#    com.netflix: debug
+#    org.springframework: DEBUG
+
+zuul:
+  routes:
+    prayer-zuul:
+      path: /rest/**
+      serviceId: service-provider
+      #url: http://127.0.0.1:8763/
+
+
+
+service-provider:
+  ribbon:
+#    listOfServers: localhost:8763,localhost:8764
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+# 脱离eureka，ribbon自己实现负载均衡
+#ribbon:
+#  eureka:
+#    enabled: false
