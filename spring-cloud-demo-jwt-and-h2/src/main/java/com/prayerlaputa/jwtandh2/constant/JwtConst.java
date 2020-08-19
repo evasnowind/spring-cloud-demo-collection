@@ -1,4 +1,4 @@
-package com.prayerlaputa.gatewaywithjwt.constant;
+package com.prayerlaputa.jwtandh2.constant;
 
 /**
  * @author chenglong.yu

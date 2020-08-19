@@ -1,10 +1,10 @@
-package com.prayerlaputa.gatewaywithjwt;
+package com.prayerlaputa.jwtandh2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GatewayWithJwtApplicationTests {
+class JwtAndH2ApplicationTests {
 
     @Test
     void contextLoads() {

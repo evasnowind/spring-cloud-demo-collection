@@ -1,10 +1,9 @@
-package com.prayerlaputa.gatewaywithjwt.filter;
+package com.prayerlaputa.jwtandh2.filter;
 
 
-import com.prayerlaputa.gatewaywithjwt.constant.JwtConst;
-import com.prayerlaputa.gatewaywithjwt.service.JwtService;
+import com.prayerlaputa.jwtandh2.constant.JwtConst;
+import com.prayerlaputa.jwtandh2.service.JwtService;
 import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import javax.servlet.Filter;
@@ -17,6 +16,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -34,7 +34,7 @@ import java.util.List;
 @Order(1)
 public class JwtFilter implements Filter {
 
-    private static final List<String> WHITE_LIST = Collections.singletonList("/api/register");
+    private static final List<String> WHITE_LIST = Arrays.asList("/api/register");
 
     @Resource
     private JwtService jwtService;
@@ -52,7 +52,7 @@ public class JwtFilter implements Filter {
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
 
         String jwt = httpServletRequest.getHeader(JwtConst.JWT_HEADER_NAME);
-        if (WHITE_LIST.contains(httpServletRequest.getRequestURI())) {
+        if (WHITE_LIST.contains(httpServletRequest.getRequestURI()) || httpServletRequest.getRequestURI().startsWith("/h2")) {
             //首次登陆，走正常逻辑即可
             filterChain.doFilter(servletRequest, servletResponse);
         } else if (isValidToken(jwt)) {

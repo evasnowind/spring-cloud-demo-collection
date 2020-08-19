@@ -1,4 +1,4 @@
-package com.prayerlaputa.gatewaywithjwt.filter;
+package com.prayerlaputa.jwtandh2.filter;
 
 import org.springframework.core.annotation.Order;
 

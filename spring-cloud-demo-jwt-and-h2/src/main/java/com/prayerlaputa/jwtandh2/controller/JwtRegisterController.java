@@ -1,8 +1,7 @@
-package com.prayerlaputa.gatewaywithjwt.controller;
+package com.prayerlaputa.jwtandh2.controller;
 
-import com.prayerlaputa.gatewaywithjwt.constant.JwtConst;
-import com.prayerlaputa.gatewaywithjwt.service.JwtService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.prayerlaputa.jwtandh2.constant.JwtConst;
+import com.prayerlaputa.jwtandh2.service.JwtService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

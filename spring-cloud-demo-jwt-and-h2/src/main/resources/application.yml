@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway-with-jwt
+  #JPA配置
+  jpa:
+    #启用SQL语句的日志记录
+    show-sql: true
+    hibernate:
+      #设置ddl模式
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:h2:mem:dbtest
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+    # 数据初始化
+    schema: classpath:db/schema.sql
+    data: classpath:db/data.sql
+    #h2 web console配置
+    platform: h2  #表明使用的数据库平台是h2
+  h2:
+    console:
+      enabled: true
+      settings:
+        # 进行该配置后，h2 web consloe就可以在远程访问了。否则只能在本机访问。
+        web-allow-others: true
+      path: /h2
+

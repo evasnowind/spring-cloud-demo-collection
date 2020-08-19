@@ -1,4 +1,4 @@
-package com.prayerlaputa.gatewaywithjwt.service;
+package com.prayerlaputa.jwtandh2.service;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -22,10 +22,11 @@ public class JwtService {
 
     public String generateToken(String payload) {
 
+        Date expiredTime = new Date(System.currentTimeMillis() + TIME_OUT_SECOND);
         return Jwts.builder()
                 // 设置主题（声明信息）
                 .setSubject(payload)
-                .setExpiration(new Date(System.currentTimeMillis() + TIME_OUT_SECOND))
+                .setExpiration(expiredTime)
                 // 设置安全密钥（生成签名所需的密钥和算法）
                 .signWith(SECRET_KEY)
                 .compact();

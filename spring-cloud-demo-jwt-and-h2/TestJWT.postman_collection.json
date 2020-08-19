@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "3a8d2d0a-80fd-464b-b557-c30e13e700fd",
+		"name": "TestJWT",
+		"description": "注意两个接口之间请求时间不能太长，否则会抛出异常。",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/register?username=abcd",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/register?username=abcd",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "abcd"
+						}
+					]
+				},
+				"description": "注册，拿到jwt"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/test",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmNkIiwiZXhwIjoxNTk3ODMxODI1fQ.uWoIS-lDPJ9pzgPiexJAJx90IaYqPwG-5wpL6q8TWjs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/test",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test"
+					]
+				},
+				"description": "刷新JWT"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
