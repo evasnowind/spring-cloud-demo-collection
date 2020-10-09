@@ -5,7 +5,7 @@ import feign.auth.BasicAuthRequestInterceptor;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author chenglong.yu@brgroup.com
+ * @author chenglong.yu
  * created on 2020/6/29
  */
 //@Configuration

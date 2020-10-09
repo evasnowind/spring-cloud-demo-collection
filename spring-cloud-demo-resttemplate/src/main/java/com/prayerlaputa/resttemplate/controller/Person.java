@@ -3,7 +3,7 @@ package com.prayerlaputa.resttemplate.controller;
 import lombok.Data;
 
 /**
- * @author chenglong.yu@brgroup.com
+ * @author chenglong.yu
  * created on 2020/6/24
  */
 @Data
